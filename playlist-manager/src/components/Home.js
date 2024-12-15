@@ -17,7 +17,7 @@ const Home = () => {
     try {
       const token = localStorage.getItem('token');
       if (!token) {
-        navigate('/login');
+        navigate('/');
         return;
       }
   
@@ -49,7 +49,7 @@ const Home = () => {
       console.error('Failed to fetch playlists:', error.message);
       setError('Failed to fetch playlists. Please try again.');
       localStorage.removeItem('token'); 
-      navigate('/login');
+      navigate('/');
     } finally {
       setLoading(false);
     }

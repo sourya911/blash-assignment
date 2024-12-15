@@ -7,8 +7,7 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [otp, setOtp] = useState('');
   const [isOtpSent, setIsOtpSent] = useState(false); 
-  const [isOtpVerified, setIsOtpVerified] = useState(false); 
-  const [loginWithOtp, setLoginWithOtp] = useState(false); // State to switch between password and OTP login
+  const [loginWithOtp, setLoginWithOtp] = useState(false); 
   const navigate = useNavigate();
 
   const handleSendOtp = async () => {
@@ -28,7 +27,7 @@ const Login = () => {
       if (response.data.token) {
         localStorage.setItem('token', response.data.token); 
         console.log('Token saved to localStorage');
-        navigate('/'); 
+        navigate('/home'); 
       } else {
         console.error('No token found in response');
         alert('Invalid OTP');
@@ -50,7 +49,7 @@ const Login = () => {
       if (response.data.token) {
         localStorage.setItem('token', response.data.token); 
         console.log('Token saved to localStorage');
-        navigate('/'); 
+        navigate('/home'); 
       } else {
         console.error('No token found in response');
         alert('Invalid response from server');
@@ -66,7 +65,6 @@ const Login = () => {
       <div className="bg-white p-8 rounded-lg shadow-lg w-full sm:w-96">
         <h1 className="text-2xl font-semibold text-center text-gray-800 mb-6">Login</h1>
 
-        {/* Toggle for choosing login method */}
         <div className="mb-4 text-center">
           <button 
             onClick={() => setLoginWithOtp(false)} 
@@ -82,7 +80,6 @@ const Login = () => {
           </button>
         </div>
 
-        {/* Password login form */}
         {!loginWithOtp ? (
           <>
             <div className="mb-4">
@@ -115,7 +112,6 @@ const Login = () => {
             </button>
           </>
         ) : (
-          // OTP login form
           <>
             <div className="mb-4">
               <label htmlFor="email" className="block text-gray-700">Email</label>

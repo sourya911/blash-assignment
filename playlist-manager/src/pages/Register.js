@@ -16,7 +16,7 @@ const Register = () => {
         password,
       });
       alert('Registration successful!');
-      navigate('/login'); 
+      navigate('/'); 
     } catch (error) {
       console.error('Registration error', error.response.data.message);
       alert('Error during registration');
@@ -28,7 +28,6 @@ const Register = () => {
       <div className="bg-white p-8 rounded-lg shadow-lg w-full sm:w-96">
         <h1 className="text-2xl font-semibold text-center text-gray-800 mb-6">Register</h1>
         
-        {/* Username */}
         <div className="mb-4">
           <label htmlFor="username" className="block text-gray-700">Username</label>
           <input
@@ -41,7 +40,6 @@ const Register = () => {
           />
         </div>
 
-        {/* Email */}
         <div className="mb-4">
           <label htmlFor="email" className="block text-gray-700">Email</label>
           <input
@@ -54,7 +52,6 @@ const Register = () => {
           />
         </div>
 
-        {/* Password */}
         <div className="mb-6">
           <label htmlFor="password" className="block text-gray-700">Password</label>
           <input
@@ -67,7 +64,6 @@ const Register = () => {
           />
         </div>
 
-        {/* Register Button */}
         <button
           onClick={handleRegister}
           className="w-full py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
