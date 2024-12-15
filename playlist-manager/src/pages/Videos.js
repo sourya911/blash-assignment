@@ -13,7 +13,7 @@ const Videos = () => {
     const userId = decoded.userId;
 
     try {
-      const response = await axios.get(`http://localhost:5000/api/users/${userId}/videos`, {
+      const response = await axios.get(`https://blash-assignment.onrender.com/api/users/${userId}/videos`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setVideos(response.data);

@@ -25,7 +25,7 @@ const Home = () => {
       const userId = decoded.userId;
   
       const response = await axios.get(
-        `http://localhost:5000/api/users/${userId}/videos`,
+        `https://blash-assignment.onrender.com/api/users/${userId}/videos`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
   
