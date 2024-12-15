@@ -15,6 +15,14 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  otp: {
+    type: String,
+    required: false
+  },
+  otpExpiry: {
+    type: Date,
+    required: false
+  },
   videos: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Video'
